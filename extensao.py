@@ -14,7 +14,7 @@ def selecionar_arquivos_origem():
     caminhos_arquivos = filedialog.askopenfilenames()
     if caminhos_arquivos:
         entry_origem.delete(0, tk.END)
-        entry_origem.insert(0, ', '.join(caminhos_arquivos))
+        entry_origem.insert(0, '; '.join(caminhos_arquivos))
 
 def selecionar_pasta_destino():
     caminho_destino = filedialog.askdirectory()
@@ -62,7 +62,7 @@ def alterar_extensao():
                 shutil.copy(caminho_arquivo_origem, caminho_arquivo_destino)
                 qtd_alterados += 1
     else:
-        for caminho_arquivo_origem in caminho_origem.split(', '):
+        for caminho_arquivo_origem in caminho_origem.split('; '):
             if os.path.isfile(caminho_arquivo_origem):
                 nome_arquivo, extensao_antiga = os.path.splitext(os.path.basename(caminho_arquivo_origem))
 
@@ -86,37 +86,37 @@ root = tk.Tk()
 root.title('Alterar Extensão de Arquivos')
 
 # Criar os widgets
-label_origem = tk.Label(root, text='Selecione a pasta de origem ou os arquivos:')
-entry_origem = tk.Entry(root, width=50)
-button_selecionar_origem = tk.Button(root, text='Selecionar Pasta', command=selecionar_pasta_origem)
-button_selecionar_arquivos = tk.Button(root, text='Selecionar Arquivos', command=selecionar_arquivos_origem)
-
-label_destino = tk.Label(root, text='Selecione a pasta de destino:')
-entry_destino = tk.Entry(root, width=50)
-button_selecionar_destino = tk.Button(root, text='Selecionar', command=selecionar_pasta_destino)
-
-label_extensao = tk.Label(root, text='Nova Extensão:')
-entry_extensao = tk.Entry(root, width=10)
-
-button_executar = tk.Button(root, text='Executar', command=alterar_extensao)
-
-label_status = tk.Label(root, text='')
-
-# Posicionar os widgets na janela
+label_origem = tk.Label(root, text='Selecione a pasta de origem ou os arquivos:', font=('Arial', 12))
 label_origem.grid(row=0, column=0, padx=10, pady=5, sticky=tk.W)
+
+entry_origem = tk.Entry(root, width=50)
 entry_origem.grid(row=0, column=1, padx=10, pady=5)
+
+button_selecionar_origem = tk.Button(root, text='Selecionar Pasta', command=selecionar_pasta_origem)
 button_selecionar_origem.grid(row=0, column=2, padx=10, pady=5)
+
+button_selecionar_arquivos = tk.Button(root, text='Selecionar Arquivos', command=selecionar_arquivos_origem)
 button_selecionar_arquivos.grid(row=0, column=3, padx=10, pady=5)
 
+label_destino = tk.Label(root, text='Selecione a pasta de destino:', font=('Arial', 12))
 label_destino.grid(row=1, column=0, padx=10, pady=5, sticky=tk.W)
+
+entry_destino = tk.Entry(root, width=50)
 entry_destino.grid(row=1, column=1, padx=10, pady=5)
+
+button_selecionar_destino = tk.Button(root, text='Selecionar', command=selecionar_pasta_destino)
 button_selecionar_destino.grid(row=1, column=2, padx=10, pady=5)
 
+label_extensao = tk.Label(root, text='Nova Extensão:', font=('Arial', 12))
 label_extensao.grid(row=2, column=0, padx=10, pady=5, sticky=tk.W)
+
+entry_extensao = tk.Entry(root, width=10)
 entry_extensao.grid(row=2, column=1, padx=10, pady=5)
 
+button_executar = tk.Button(root, text='Executar', command=alterar_extensao, bg='green', fg='white', font=('Arial', 12))
 button_executar.grid(row=3, column=0, columnspan=4, pady=10)
 
+label_status = tk.Label(root, text='', font=('Arial', 12), fg='blue')
 label_status.grid(row=4, column=0, columnspan=4)
 
 # Iniciar o loop principal da janela
