@@ -17,6 +17,7 @@ Este é um programa em Python que utiliza a biblioteca Tkinter para criar uma in
 4. Insira a nova extensão desejada (nao precisa por o '.').
 5. Clique em "Executar" para iniciar o processo.
 6. Verifique as mensagens de status.
+(AO USAR O EXE SEU ANTI VIRUS PODE FAZER O BLOQUEIO, E NECESSARIO ADICIONAR O ARQUIVO AS EXECESSOES)
 
 ## Tecnologias Utilizadas
 
