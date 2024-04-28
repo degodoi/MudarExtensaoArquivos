@@ -1,3 +1,4 @@
+(SE BAIXOU O EXE LEMBRESSE DE DAR PERMISSÃO NO ANTI VIRUS)
 # Alterar Extensão de Arquivos
 
 Este é um programa em Python que utiliza a biblioteca Tkinter para criar uma interface gráfica que permite ao usuário alterar a extensão de arquivos em massa. É possível selecionar uma pasta de origem ou arquivos específicos, escolher uma pasta de destino e uma nova extensão para os arquivos.
